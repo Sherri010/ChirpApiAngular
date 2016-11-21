@@ -1,0 +1,54 @@
+<div class="container margin-top-20">
+	<div class="logo border-radius-10">
+		Chirp! The Next Big Thang
+	</div>
+</div>
+
+<div class="container margin-top-10">
+    <form ng-submit="chirpsCtrl.submitChirp($event);">
+    	<div id="chirp-wrapper" class="border-radius-10">
+    		<div>
+    			<textarea ng-model="chirpsCtrl.chirp.chirp_text" id="chirp-text" class="form-control" placeholder="You can chirp here. Make sure it's less than 140 characters!"></textarea>
+    		</div>
+    		<div class="margin-top-10 txt-right">
+    			<button id="cancel-chirp-button" type="button" class="btn btn-default margin-right-10">Don't Chirp</button>
+    			<button type="submit" class="btn btn-primary">Chirp!</button>
+    		</div>
+    	</div>
+    </form>
+</div>
+
+<div class="container margin-top-10">
+	<div ng-repeat="chirp in chirpsCtrl.chirps" class="one-chirp border-radius-10">
+		<div class="row">
+			<div class="col-sm-2">
+				<chirp-bird></chirp-bird>
+			</div>
+			<div class="col-sm-10">
+				<div class="margin-top-20">
+					{{chirp.chirp_text}}
+				</div>
+				<div class="margin-top-10 txt-right">
+					<a href="#/chirps/{{chirp.id}}" class="btn btn-primary">Edit Chirp</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="instructions-modal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title">How to Use</h4>
+			</div>
+			<div class="modal-body">
+				To get started, hold down shift and type "CHIRP". Hold shift and type "NAH" if you want to cancel your chirp.
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Cool Beans</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

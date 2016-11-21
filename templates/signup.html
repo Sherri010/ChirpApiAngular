@@ -1,0 +1,22 @@
+<div class="container small-container margin-top-40">
+    <form ng-submit="signupCtrl.signupUser($event);">
+        <div class="well">
+            <h2 class="txt-center">Sign Up</h2>
+            <div class="bold">
+                Email
+            </div>
+            <div class="margin-top-20">
+                <input ng-model="signupCtrl.user.email" type="text" class="form-control" />
+            </div>
+            <div class="bold margin-top-20">
+                Password
+            </div>
+            <div class="margin-top-20">
+                <input ng-model="signupCtrl.user.password" type="password" class="form-control" />
+            </div>
+            <div class="margin-top-20 txt-center">
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+        </div>
+    </form>
+</div>
