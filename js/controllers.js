@@ -4,6 +4,8 @@ app.controller("SignupController", SignupController);
 app.controller("LoginController", LoginController);
 
 function ChirpsController($http, AuthService) {
+    AuthService.isAuthenticated();
+
     var vm = this;
 
     function getChirps() {
@@ -47,6 +49,8 @@ function ChirpsController($http, AuthService) {
 }
 
 function ChirpsEditController($http, $routeParams, $location, AuthService) {
+    AuthService.isAuthenticated();
+    
     var vm = this;
 
     $http({
